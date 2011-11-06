@@ -6,7 +6,7 @@ class vim {
             }
         }
         darwin: {
-            package { 'vim':
+            package { ['vim', 'MacVim']:
                 ensure => installed,
             }
         }
