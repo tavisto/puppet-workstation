@@ -8,6 +8,7 @@ class hg {
         darwin: {
             package { 'mercurial':
                 ensure => installed,
+                provider => darwinport,
             }
         }
         default: { fail("Unrecognized operating system: $operatinsystem") }

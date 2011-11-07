@@ -6,8 +6,9 @@ class git {
             }
         }
         darwin: {
-            package { 'git':
+            package { 'git-core':
                 ensure => installed,
+                provider => darwinport,
             }
         }
         default: { fail("Unrecognized operating system: $operatinsystem") }

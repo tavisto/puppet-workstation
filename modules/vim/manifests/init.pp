@@ -8,6 +8,7 @@ class vim {
         darwin: {
             package { ['vim', 'MacVim']:
                 ensure => installed,
+                provider => darwinport,
             }
         }
         default: { fail("Unrecognized operating system: $operatinsystem") }
