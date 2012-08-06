@@ -5,9 +5,15 @@ class git {
                 ensure => installed,
             }
         }
-        debian, ubuntu, darwin: {
+        debian, ubuntu: {
             package { 'git-core':
                   ensure   => installed
+            }
+        }
+        darwin: {
+            package { 'git-core':
+                  ensure   => installed,
+                  provider => 'macports',
             }
         }
         default: { fail("Unrecognized operating system: ${::operatinsystem}") }
