@@ -1,5 +1,5 @@
 class vim {
-    case $operatingsystem {
+    case $::operatingsystem {
         fedora, centos, scientific: {
             package { 'vim-enhanced':
                 ensure => installed,
@@ -8,9 +8,8 @@ class vim {
         darwin: {
             package { ['vim', 'MacVim']:
                 ensure => installed,
-                provider => darwinport,
             }
         }
-        default: { fail("Unrecognized operating system: $operatinsystem") }
+        default: { fail("Unrecognized operating system: ${::operatinsystem}") }
     }
 }

@@ -1,5 +1,5 @@
 class hg {
-    case $operatingsystem {
+    case $::operatingsystem {
         fedora, centos, scientific: {
             package { 'mercurial':
                 ensure => installed,
@@ -8,9 +8,8 @@ class hg {
         darwin: {
             package { 'mercurial':
                 ensure => installed,
-                provider => darwinport,
             }
         }
-        default: { fail("Unrecognized operating system: $operatinsystem") }
+        default: { fail("Unrecognized operating system: ${::operatinsystem}") }
     }
 }

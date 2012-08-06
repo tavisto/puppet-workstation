@@ -1,16 +1,15 @@
 class git {
-    case $operatingsystem {
+    case $::operatingsystem {
         fedora, centos, scientific: {
             package { 'git':
                 ensure => installed,
             }
         }
-        darwin: {
+        debian, ubuntu, darwin: {
             package { 'git-core':
-                ensure => installed,
-                provider => darwinport,
+                  ensure   => installed
             }
         }
-        default: { fail("Unrecognized operating system: $operatinsystem") }
+        default: { fail("Unrecognized operating system: ${::operatinsystem}") }
     }
 }
