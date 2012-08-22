@@ -10,6 +10,11 @@ class vim {
         ensure   => installed,
         provider => 'macports',
         }
+      # For Syntastic Checks
+      package { ['npm', 'rb-rubygems', 'py27-pylint', 'tidy']:
+        ensure   => installed,
+        provider => 'macports',
+        }
     }
     default: { fail("Unrecognized operating system: ${::operatinsystem}") }
   }
