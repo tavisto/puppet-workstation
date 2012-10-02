@@ -1,3 +1,9 @@
+# Class: vim
+# 
+# Installs vim and all the things needed to run syntastic checks
+#
+# Sample Usage:
+# include vim
 class vim {
   case $::operatingsystem {
     fedora, centos, scientific: {
@@ -11,7 +17,14 @@ class vim {
         provider => 'macports',
         }
       # For Syntastic Checks
-      package { ['npm', 'rb-rubygems', 'py27-pylint', 'tidy']:
+      package { [
+        'ctags',
+        'npm',
+        'rb-rubygems',
+        'py27-pylint',
+        'tidy',
+        'pear-PHP_CodeSniffer',
+        ]:
         ensure   => installed,
         provider => 'macports',
         }
