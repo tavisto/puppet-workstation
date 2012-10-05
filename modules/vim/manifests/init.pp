@@ -1,5 +1,5 @@
 # Class: vim
-# 
+#
 # Installs vim and all the things needed to run syntastic checks
 #
 # Sample Usage:
@@ -7,7 +7,7 @@
 class vim {
   case $::operatingsystem {
     fedora, centos, scientific: {
-      package { 'vim-enhanced':
+      package { ['vim-enhanced', 'ctags-etags'] :
         ensure => installed,
       }
     }
