@@ -8,6 +8,8 @@ case $::operatingsystem {
   }
   default: {}
 }
-class { 'vim': }
-class { 'hg':}
-class { 'git':}
+include vim
+include hg
+include git
+include python
+include utils

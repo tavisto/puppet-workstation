@@ -21,7 +21,6 @@ class vim {
         'ctags',
         'npm',
         'rb-rubygems',
-        'py27-pylint',
         'tidy',
         'pear-PHP_CodeSniffer',
         ]:
