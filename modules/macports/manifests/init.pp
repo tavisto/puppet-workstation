@@ -47,7 +47,7 @@ class macports (
 
         }
     default: { fail(
-        "${::operatinsystem} is Unsupoorted macports is only for OS-X")
+        "${::operatingsystem} is Unsupoorted macports is only for OS-X")
     }
   }
 }

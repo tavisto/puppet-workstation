@@ -16,6 +16,6 @@ class git {
                   provider => 'macports',
             }
         }
-        default: { fail("Unrecognized operating system: ${::operatinsystem}") }
+        default: { fail("Unrecognized operating system: ${::operatingsystem}") }
     }
 }

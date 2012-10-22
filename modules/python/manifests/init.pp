@@ -38,6 +38,6 @@ class python {
           require => Package['flake8'];
       }
     }
-    default: { fail("Unrecognized operating system: ${::operatinsystem}") }
+    default: { fail("Unrecognized operating system: ${::operatingsystem}") }
   }
 }
